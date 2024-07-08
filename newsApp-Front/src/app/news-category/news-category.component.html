@@ -1,0 +1,24 @@
+<section>
+    <form>
+        <input type="text" placeholder="Filter by title" #filter (input)="filterResults(filter.value)">
+        <button class="primary" (click)="filterResults(filter.value)" type="button">Search</button>
+    </form>
+</section>
+
+<section class="results">
+    <!-- {{this.filteredArticlesList.length}}
+    {{this.filteredArticlesList.length > 0 ? 'Results' : 'No results'}} -->
+
+    @for (item of this.filteredArticlesList; track $index) {
+    <app-news-list [article]="item"></app-news-list>
+    }
+</section>
+
+@if (totalPages > 1) {
+<div class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+</div>
+
+}

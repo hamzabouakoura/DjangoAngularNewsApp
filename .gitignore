@@ -1,0 +1,10 @@
+# .gitignore
+
+# Backend
+newsApp-Back/.env
+newsApp-Back/news/__pycache__/
+
+# Frontend
+newsApp-Front/node_modules/
+newsApp-Front/dist/
+newsApp-Front/.angular/

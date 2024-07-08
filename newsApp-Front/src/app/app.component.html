@@ -1,0 +1,44 @@
+<main>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a [routerLink]="['/']" class="navbar-brand" href="#">News App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/category', 'health']" class="nav-link" href="">Health</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/category', 'sports']" class="nav-link">Sports</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/category', 'business']" class="nav-link">Business</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/category', 'entertainment']" class="nav-link">Entertainment</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/category', 'technology']" class="nav-link">Technology</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/category', 'science']" class="nav-link">Science</a>
+        </li>
+      </ul>
+    </div>
+    <select [value]="selectedCountry" (change)="onCountryChange($event)">
+      <option value="us" selected>US</option>
+      <option value="fr">France</option>
+      <option value="de">Germany</option>
+
+    </select>
+  </nav>
+
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+</main>
